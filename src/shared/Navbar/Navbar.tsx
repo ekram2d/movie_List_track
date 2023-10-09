@@ -1,16 +1,19 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
+import { RootState } from '../../app/store';
+import { useSelector, useDispatch } from 'react-redux'
 const Navbar = () => {
+      const moviecart = useSelector((state: RootState) => state.movies.cart);
+      console.log(moviecart)
       const heroStyle = {
-            
-                  // background: '#fffc00',  
-                  // background: '-webkit-linear-gradient(to right, #ffffff, #fffc00)',  /* Chrome 10-25, Safari 5.1-6 */
-                  // background: 'linear-gradient(to right, #ffffff, #fffc00)', 
-                  background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(195,195,196,1) 6%, rgba(0,212,255,1) 100%)',
-                
-                
-          };
+
+            // background: '#fffc00',  
+            // background: '-webkit-linear-gradient(to right, #ffffff, #fffc00)',  /* Chrome 10-25, Safari 5.1-6 */
+            // background: 'linear-gradient(to right, #ffffff, #fffc00)', 
+            background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(195,195,196,1) 6%, rgba(0,212,255,1) 100%)',
+
+
+      };
       return (
             <div>
                   <div style={heroStyle} className="navbar bg-slate-300  text-black rounded-xl  mb-4 ">
@@ -34,12 +37,12 @@ const Navbar = () => {
                                     <li><a>Item 3</a></li>
                               </ul>
                         </div>
-                        <div className="navbar-end me-2">
+                        <div className="navbar-end text-2xl font-mono me-2  ">
 
 
-                                    <FontAwesomeIcon icon={faShoppingCart} className="shopping-cart-icon" />
-                           
+                              <FontAwesomeIcon icon={faShoppingCart} className="shopping-cart-icon" />
 
+                              {moviecart.length}
 
                         </div>
                   </div>
