@@ -4,50 +4,60 @@
 
 const Movie = ({ episode }: any) => {
       // Use the 'episode' prop to render the movie details
+      const movie = episode?.characters[9];
+      const { id, image, name, species } = movie;
+      // console.log(single)
+ const addmovie =(movie:any)=>{
+      console.log(movie);
+ }
       return (
-            <div className='col-span-1 cursor-pointer group shadow-2xl rounded-2xl p-3'>
-              <div className='flex flex-col gap-2 w-full'>
-                <div
-                  className='
+            <div className='col-span-1 cursor-pointer group shadow-2xl rounded-2xl p-3 text-center'>
+                  <div className='flex flex-col gap-2 w-full'>
+                        <div
+                              className='
                     aspect-square 
                     w-full 
                     relative 
                     overflow-hidden 
                     rounded-xl
                   '
-                >
-                  <img
-                    className='
+                        >
+                              <img
+                                    className='
                       object-cover 
                       h-full 
                       w-full 
                       group-hover:scale-110 
                       transition
                     '
-                    src='https://a0.muscache.com/im/pictures/4f70b681-a792-4530-8c52-f2a8d262942d.jpg'
-                    alt='Room'
-                  />
-                  <div
-                    className='
+                                    src={image}
+                                    alt='Room'
+                              />
+                              <div
+                                    className='
                     absolute
                     top-3
                     right-3
                   '
-                  >
-                    {/* <HeartButton /> */}
+                              >
+                                    {/* <HeartButton /> */}
+                              </div>
+                        </div>
+                        <div className='font-semibold text-2xl uppercase'>{name}</div>
+                        <div className='font-light text-black font-serif text-lg'>
+                              {species}
+                        </div>
+
+                        <div className='font-semibold text-center font-mono'>id:{id}</div>
+
                   </div>
-                </div>
-                <div className='font-semibold text-lg'>Sidemen, Indonesia</div>
-                <div className='font-light text-neutral-500'>
-                  5 nights . June 19 - 26
-                </div>
-                <div className='flex flex-row items-center gap-1'>
-                  <div className='font-semibold'>$ 200</div>
-                  <div className='font-light'>night</div>
-                </div>
-              </div>
+
+                  <button onClick={()=>addmovie(movie)} className="btn-sm w-full bg-gradient-to-r from-[#ff5f6d]
+ from-10% via-[#66ff00] via-30% to-[#ffc371] to-90% ...  rounded-lg p-2 btn text-black">Add To Watch List</button>
+
             </div>
-          )
+
+      )
 };
 
 export default Movie;

@@ -1,9 +1,18 @@
 
 
 const Footer = () => {
+      const heroStyle = {
+            
+            // background: '#fffc00',  
+            // background: '-webkit-linear-gradient(to right, #ffffff, #fffc00)',  /* Chrome 10-25, Safari 5.1-6 */
+            // background: 'linear-gradient(to right, #ffffff, #fffc00)', 
+            background: 'linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(195,195,196,1) 6%, rgba(0,212,255,1) 100%)',
+          
+          
+    };
       return (
             <div>
-                  <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+                  <footer style={heroStyle} className="footer footer-center p-10   text-black mt-10  rounded-xl  shadow-2xl">
                         <nav className="grid grid-flow-col gap-4">
                               <a className="link link-hover">About us</a>
                               <a className="link link-hover">Contact</a>

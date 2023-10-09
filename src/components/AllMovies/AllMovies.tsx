@@ -30,7 +30,7 @@ const AllMovies = () => {
       }
 
       const { results } = data.episodes;
-      console.log(results);
+      // console.log(results);
 
       return (
             <div>

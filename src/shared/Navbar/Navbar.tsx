@@ -13,7 +13,7 @@ const Navbar = () => {
           };
       return (
             <div>
-                  <div style={heroStyle} className="navbar bg-slate-300  text-black rounded-xl ">
+                  <div style={heroStyle} className="navbar bg-slate-300  text-black rounded-xl  mb-4 ">
                         <div className="navbar-start " >
                               <div className="dropdown bg-slate-300 ">
                                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
