@@ -2,7 +2,7 @@ import React from 'react';
 // import Lottie from 'react-lottie';
 import { useQuery } from '@apollo/client';
 import { GET_EPISODES } from '../../graphql/AllQuery/AllQuety';
-import lottieImage from './../../../public/animation_lnip2ovc.json';
+
 import Movie from './Movie';
 
 const AllMovies = () => {

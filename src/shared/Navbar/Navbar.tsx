@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { RootState } from '../../app/store';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom';
 const Navbar = () => {
       const moviecart = useSelector((state: RootState) => state.movies.cart);
       console.log(moviecart)
@@ -23,26 +24,26 @@ const Navbar = () => {
                                           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                                     </label>
                                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-slate-300 rounded-box w-52">
-                                          <li><a>Item 1</a></li>
+                                          <li><Link to='/mycart'></Link></li>
 
                                           <li><a>Item 3</a></li>
                                     </ul>
                               </div>
-                              <a className=" uppercase  font-bold text-xl bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...  rounded-lg p-2 btn text-black ">Movies</a>
+                              <Link to={'/'} className=" uppercase  font-bold text-xl bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% ...  rounded-lg p-2 btn text-black ">Movies</Link>
                         </div>
                         <div className="navbar-center hidden lg:flex">
                               <ul className="menu menu-horizontal px-1">
-                                    <li><a>Item 1</a></li>
+                                    <li><Link to='/mycart'></Link></li>
 
-                                    <li><a>Item 3</a></li>
+
                               </ul>
                         </div>
-                        <div className="navbar-end text-2xl font-mono me-2  ">
+                        <div className="navbar-end text-2xl font-mono me-2 ">
 
+                              <Link to='/mycart'><FontAwesomeIcon icon={faShoppingCart} className="shopping-cart-icon" />
 
-                              <FontAwesomeIcon icon={faShoppingCart} className="shopping-cart-icon" />
+                                    {moviecart.length}</Link>
 
-                              {moviecart.length}
 
                         </div>
                   </div>

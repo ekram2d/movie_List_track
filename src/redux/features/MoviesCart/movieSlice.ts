@@ -3,18 +3,18 @@ import type { PayloadAction } from '@reduxjs/toolkit';
 import Swal from 'sweetalert2';
 
 interface Movie {
-      // Define the structure of a movie here
-      id: String;
-      image: String;
-      name: String;
-      species: String;
-      status: String;
+      id: string;
+      image: string;
+      name: string;
+      species: string;
+      status: string;
       title: string;
+      Status: string; // Note: Status should match the property name in your data
       // Add other properties as needed
 }
 
 const initialState = {
-      cart: [] as Movie[], // Initialize cart as an array of movies
+      cart: [] as Movie[],
 };
 
 export const counterSlice = createSlice({
@@ -22,6 +22,8 @@ export const counterSlice = createSlice({
       initialState,
       reducers: {
             addToCart: (state, action: PayloadAction<Movie>) => {
+                  console.log(state.cart)
+
                   const existingItem = state.cart.find((item) => item.id === action.payload.id);
                   if (existingItem) {
                         Swal.fire({
@@ -33,6 +35,7 @@ export const counterSlice = createSlice({
                         return;
                   }
                   else {
+
                         state.cart.push(action.payload);
 
                         Swal.fire(
@@ -42,16 +45,19 @@ export const counterSlice = createSlice({
                         )
                   }
             },
-            updateToCart: (state) => {
-                  // Implement your update logic here
+            updateToCart: (state, action: PayloadAction<{ id: string; Status: string }>) => {
+                  const updatedMovie = state.cart.find((movie) => movie.id == action.payload.id);
+
+                  if (updatedMovie) {
+                        updatedMovie.Status = action.payload.Status;
+                  }
             },
-            deleteToCart: (state, action: PayloadAction<number>) => {
-                  // Implement your delete logic here
+            deleteToCart: (state, action: PayloadAction<string>) => {
+                  state.cart = state.cart.filter((item) => item.id !== action.payload);
             },
       },
 });
 
-// Action creators are generated for each case reducer function
 export const { addToCart, updateToCart, deleteToCart } = counterSlice.actions;
 
 export default counterSlice.reducer;

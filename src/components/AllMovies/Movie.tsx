@@ -8,10 +8,13 @@ const Movie = ({ episode }: any) => {
       const dispatch = useDispatch()
       const movie = episode?.characters[9];
       const { id, image, name, species } = movie;
-      console.log(movie)
-      // const addmovie = (movie: any) => {
-      //       console.log(movie);
-      // }
+      // console.log(movie)
+      const addmovie = (movie: any) => {
+       const Status = 'want to watch' ;
+            const Movie = {...movie,Status}
+            // console.log(Movie);
+            dispatch(addToCart(Movie))
+      }
       return (
             <div className='col-span-1 cursor-pointer group shadow-2xl rounded-2xl p-3 text-center'>
                   <div className='flex flex-col gap-2 w-full'>
@@ -54,7 +57,7 @@ const Movie = ({ episode }: any) => {
 
                   </div>
 
-                  <button onClick={() => dispatch(addToCart(movie))} className="btn-sm w-full bg-gradient-to-r from-[#ff5f6d]
+                  <button onClick={() =>addmovie(movie) } className="btn-sm w-full bg-gradient-to-r from-[#ff5f6d]
  from-10% via-[#66ff00] via-30% to-[#ffc371] to-90% ...  rounded-lg p-2 btn text-black">Add To Watch List</button>
 
             </div>
