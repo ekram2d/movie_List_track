@@ -53,8 +53,22 @@ export const counterSlice = createSlice({
                   }
             },
             deleteToCart: (state, action: PayloadAction<string>) => {
-                  state.cart = state.cart.filter((item) => item.id !== action.payload);
+
+
+
+                  const updatedCart = state.cart.filter((movie) => movie.id !== action.payload);
+
+                  state.cart = updatedCart;
+
+                  Swal.fire(
+                        'Deleted!',
+                        'Your Movie has been deleted.',
+                        'success'
+                  )
+
+
             },
+
       },
 });
 
