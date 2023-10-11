@@ -1,6 +1,17 @@
-# React + TypeScript + Vite
+# React + TypeScript + Vite -> Live_Link : https://wondrous-pie-ba5426.netlify.app/
+# Movie List track web app
+ - Can add watch list your favourite movie
+ - Then Update the Status Watching
+ - Then Update the Status Watched
+ - You can Delete the Movie from your Cart
+# git clone https://github.com/ekram2d/movie_List_track.git
+ - npm i
+ - cd movie_List_track
+ - code .
+ - npm start
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+
 
 Currently, two official plugins are available:
 
