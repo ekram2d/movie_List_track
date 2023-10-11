@@ -13,9 +13,14 @@ const CartMovie = ({ movie }: { movie: CharacterWithStatus }) => {
     newStatus = event.target.value
   };
 
+  const backgroundImageStyle = {
+    backgroundImage: `url(https://thumbs.dreamstime.com/b/abstract-blur-transparency-big-bokeh-place-text-title-background-tv-show-intro-opener-christmas-theme-holiday-party-clubs-137068471.jpg)`,
+  };
+
   return (
     <div>
-      <div key={movie.id} className="bg-white shadow rounded-lg p-4 text-center relative">
+     
+      <div key={movie.id} style={backgroundImageStyle}  className=" glass text-white shadow rounded-lg p-4 text-center relative">
         <button
           onClick={() => dispatch(deleteToCart(movie?.id!))}
           className="text-3xl absolute top-2 right-2 text-red-500 hover:text-red-600"
@@ -30,8 +35,8 @@ const CartMovie = ({ movie }: { movie: CharacterWithStatus }) => {
           />
         </div>
         <h3 className="text-xl font-semibold">{movie.name}</h3>
-        <p className="text-gray-600">{movie.species}</p>
-        <p className="text-gray-600">Status: {movie.Status}</p>
+        <p className="">{movie.species}</p>
+        <p className="">Status: {movie.Status}</p>
 
         <select
           className="w-full select select-bordered select-xs mb-1 btn btn-sm"
