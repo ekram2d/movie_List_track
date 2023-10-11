@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/features/MoviesCart/movieSlice';
-import { Character, Episode } from '../../graphql/__generated__/graphql';
+import {  Episode } from '../../graphql/__generated__/graphql';
 
 const Movie = ({ episode }: { episode: Episode }) => {
       const dispatch = useDispatch();

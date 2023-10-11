@@ -2,15 +2,15 @@ import { RootState } from "../../app/store";
 
 import { useSelector } from 'react-redux'
 import CartMovie from "./CartMovie";
-import { Character } from "../../graphql/__generated__/graphql";
+import { CharacterWithStatus } from "../../redux/features/MoviesCart/movieSlice";
 
 const CartMovies = () => {
       const cartMovie = useSelector((state: RootState) => state.movies.cart)
 
 
-      const WantTowatchMovies = cartMovie?.filter((movie: Character) => movie.Status === 'want to watch')
-      const watchinghMovies = cartMovie?.filter((movie: Character) => movie.Status === 'watching')
-      const Watched = cartMovie?.filter((movie: Character) => movie.Status === 'watched')
+      const WantTowatchMovies = cartMovie?.filter((movie: CharacterWithStatus) => movie.Status === 'want to watch')
+      const watchinghMovies = cartMovie?.filter((movie: CharacterWithStatus) => movie.Status === 'watching')
+      const Watched = cartMovie?.filter((movie: CharacterWithStatus) => movie.Status === 'watched')
 
 
       return (
@@ -22,7 +22,7 @@ const CartMovies = () => {
 
 
                         <div className="grid grid-cols-1 lg:grid-cols-1  gap-2 mt-2">
-                              {WantTowatchMovies.map((movie: Character) => (
+                              {WantTowatchMovies?.map((movie: CharacterWithStatus) => (
                                     <CartMovie movie={movie} />
                               ))}
 

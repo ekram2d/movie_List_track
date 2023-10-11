@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
-import { updateToCart, deleteToCart } from '../../redux/features/MoviesCart/movieSlice';
+import { updateToCart, deleteToCart, CharacterWithStatus } from '../../redux/features/MoviesCart/movieSlice';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Character } from '../../graphql/__generated__/graphql';
 
-const CartMovie = ({ movie }: { movie: Character }) => {
+
+const CartMovie = ({ movie }: { movie: CharacterWithStatus }) => {
   const dispatch = useDispatch();
-  const [newStatus, setNewStatus] = useState(movie.Status || 'want to watch'); // Initialize with a default value
+  let newStatus = movie.Status || 'want to watch';
 
   const handleStatusChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    setNewStatus(event.target.value);
+    newStatus = event.target.value
   };
 
   return (

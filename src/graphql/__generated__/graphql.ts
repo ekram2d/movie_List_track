@@ -26,7 +26,6 @@ export enum CacheControlScope {
 export type Character = {
   __typename?: 'Character';
   /** Time at which the character was created in the database. */
-  Status:String,
   created?: Maybe<Scalars['String']['output']>;
   /** Episodes in which this character appeared. */
   episode: Array<Maybe<Episode>>;

@@ -1,11 +1,11 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { RootState } from '../../app/store';
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
       const moviecart = useSelector((state: RootState) => state.movies.cart);
-      
+
       const heroStyle = {
 
             // background: '#fffc00',  
@@ -40,9 +40,16 @@ const Navbar = () => {
                         </div>
                         <div className="navbar-end text-2xl font-mono me-2 ">
 
-                              <Link to='/mycart'><FontAwesomeIcon icon={faShoppingCart} className="shopping-cart-icon" />
-
-                                    {moviecart.length}</Link>
+                              {
+                                    moviecart?.length >=1 ? <>
+                                    
+                                    <Link to='/mycart' className='flex justify-center items-center'>
+                                      <FontAwesomeIcon icon={faEye} className="eye-icon" />
+                                      {moviecart?.length}
+                                    </Link>
+                                  </>
+                                  : " " 
+                              }
 
 
                         </div>
