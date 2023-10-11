@@ -1,8 +1,10 @@
+import { gql } from "../__generated__";
 
-import { gql } from 'graphql-tag';
+
+
 
 // Define your GraphQL query
-export const GET_EPISODES = gql`
+export const GET_EPISODES = gql(`
   query EPISODES {
     episodes {
       results {
@@ -13,8 +15,9 @@ export const GET_EPISODES = gql`
           species
           type
           image
+        
         }
       }
     }
   }
-`;
+`);

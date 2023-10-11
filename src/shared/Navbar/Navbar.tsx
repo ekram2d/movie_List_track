@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom';
 const Navbar = () => {
       const moviecart = useSelector((state: RootState) => state.movies.cart);
-      console.log(moviecart)
+      
       const heroStyle = {
 
             // background: '#fffc00',  
