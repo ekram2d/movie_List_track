@@ -4,7 +4,8 @@
  - Then Update the Status Watching
  - Then Update the Status Watched
  - You can Delete the Movie from your Cart
-# git clone https://github.com/ekram2d/movie_List_track.git
+# How to get and install this project in your local computer 
+ - git clone https://github.com/ekram2d/movie_List_track.git
  - npm i
  - cd movie_List_track
  - code .
