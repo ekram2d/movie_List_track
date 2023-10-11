@@ -1,5 +1,5 @@
-# React + TypeScript + Vite -> Live_Link : https://wondrous-pie-ba5426.netlify.app/
-# Movie List track web app  https://wondrous-pie-ba5426.netlify.app/
+# React + TypeScript + Vite 
+# Movie List track web app Live_Link :  https://wondrous-pie-ba5426.netlify.app/
  - Can add watch list your favourite movie
  - Then Update the Status Watching
  - Then Update the Status Watched
