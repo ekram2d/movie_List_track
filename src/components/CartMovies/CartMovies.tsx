@@ -12,7 +12,7 @@ const CartMovies = () => {
       };
 
       const cartMovie = useSelector((state: RootState) => state.movies.cart)
-
+   console.log(cartMovie)
 
       const WantTowatchMovies = cartMovie?.filter((movie: CharacterWithStatus) => movie.Status === 'want to watch')
       const watchinghMovies = cartMovie?.filter((movie: CharacterWithStatus) => movie.Status === 'watching')

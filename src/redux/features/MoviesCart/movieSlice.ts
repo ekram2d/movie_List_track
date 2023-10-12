@@ -7,6 +7,11 @@ export interface CharacterWithStatus extends Character {
   Status: string;
 }
 
+export interface UpdateAction {
+  id: string;
+  Status: 'want to watch' | 'watching' | 'watched';
+}
+
 const initialState = {
   cart: JSON.parse(localStorage.getItem('Cart') || '[]') as CharacterWithStatus[],
 };
@@ -33,7 +38,8 @@ export const counterSlice = createSlice({
         Swal.fire('Add to the cart!', 'Successfully added movie!', 'success');
       }
     },
-    updateToCart: (state, action: PayloadAction<{ id: string; Status: string }>) => {
+    updateToCart: (state, action: PayloadAction<UpdateAction>) => {
+      console.log(action.payload)
       const updatedMovie = state.cart.find((movie: CharacterWithStatus) => movie.id === action.payload.id);
       if (updatedMovie) {
         updatedMovie.Status = action.payload.Status;
